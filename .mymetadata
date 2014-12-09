@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="cztv_framework"
+  id="myeclipse.1407306178186"
+  context-root="/cztv_framework"
+  j2ee-spec="6.0"
+  archive="cztv_framework.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
