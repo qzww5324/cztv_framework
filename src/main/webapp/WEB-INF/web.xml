@@ -12,7 +12,9 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath*:/applicationContext*.xml
+			classpath*:/applicationContext*.xml,
+			classpath*:/remote_server/remote-server-httpInvoke.xml,
+			classpath*:/remote_client/remote-client-httpInvoke.xml
 		</param-value>
 	</context-param>
 	<!--由Spring载入的Log4j配置文件位置-->
@@ -69,12 +71,18 @@
 	</filter-mapping>
 
 	
-
-
 	<!-- servlet 模块 相关配置  -->
 	
-
-
-
+<!--  
+	<servlet>
+		<servlet-name>remote-httpInvoke</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>remote-httpInvoke</servlet-name>
+		<url-pattern>/remote/*</url-pattern>
+	</servlet-mapping>
+-->
 
 </web-app>

@@ -10,6 +10,25 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.cztv.framework.exception.service.CacheServerException;
 
+/**
+ * Project Name:
+ * 
+ * Description:
+ * 
+ * File Name: BootstrapHandler.java
+ * 
+ * Copyright: Copyright (C) 2014 All Rights Reserved.
+ * 
+ * Company: cztv.com
+ * 
+ * Author: ct Create Time：2014-12-9 下午4:58:51 Version: v1.0
+ * 
+ * History:
+ * 
+ * Date Author Version Description
+ * --------------------------------------------------------------------------
+ * |v1.0 |Create	服务启动初始化
+ */	
 
 public class BootstrapHandler extends ContextLoaderListener {
 	private XMemcachedClient memcachedClient;

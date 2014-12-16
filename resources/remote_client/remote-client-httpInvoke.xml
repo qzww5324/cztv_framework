@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  
+	<bean id="propertyConfigurerRemote"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:/client.properties</value>
+			</list>
+		</property>
+	</bean>	
+
+	<!-- 通过Spring HttpInvoker机制代理远程访问服务 -->
+	<bean id="remoteService"
+		class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="${remote_url}" />
+		<property name="serviceInterface" value="com.cztv.framework.rmi.httpInvoker.IBaseHttpInvoke" />
+	</bean>
+
+</beans>

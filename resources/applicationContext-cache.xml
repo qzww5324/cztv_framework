@@ -11,20 +11,20 @@
 			<list>
 				<bean class="java.net.InetSocketAddress">
 					<constructor-arg>
-						<value>127.0.0.1</value>
+						<value>${memcached_addr_1}</value>
 					</constructor-arg>
 					<constructor-arg>
-						<value>11211</value>
+						<value>${memcached_port_1}</value>
 					</constructor-arg>
 				</bean>
 				<!-- 多个memcached节点配置 -->
 				<!-- 
 				<bean class="java.net.InetSocketAddress">
 					<constructor-arg>
-						<value>127.0.0.1</value>
+						<value>${memcached_addr_2}</value>
 					</constructor-arg>
 					<constructor-arg>
-						<value>11212</value>
+						<value>${memcached_port_2}</value>
 					</constructor-arg>
 				</bean>
 				 -->

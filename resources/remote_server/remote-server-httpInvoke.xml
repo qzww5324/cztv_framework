@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- 通过Spring HttpInvoker机制暴露远程访问服务 -->
+	<bean id="baseHttpInvokerService" class="com.cztv.framework.rmi.httpInvoker.BaseHttpInvokeImpl" ></bean>
+
+	<bean name="/invoke"
+		class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="baseHttpInvokerService" />
+		<property name="serviceInterface" value="com.cztv.framework.rmi.httpInvoker.IBaseHttpInvoke" />
+	</bean>
+
+	<!-- url映射 -->
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="httpInvoke">/invoke</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
